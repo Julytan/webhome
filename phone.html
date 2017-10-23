@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/swiper-3.4.2.min.css">
+	<link rel="stylesheet" type="text/css" href="css/phone.css">
+
+	<script type="text/javascript" src="js/swiper-3.4.2.min.js"></script>
+	<script type="text/javascript" src="js/swiper.animate.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
+</head>
+<body>
+	<div class="swiper-container">
+	  	<div class="swiper-wrapper">
+	    	<div class="swiper-slide part-1">
+	    		<img src="img/qiao.png" class="bd-1-img1">
+				<img src="img/gril2.png" class="bd-1-img2">
+		    	<p class="pa-1-img1 ani"  swiper-animate-effect="rotateInDownLeft" swiper-animate-duration="2s">
+		    		<img src="img/yl.png" class="pa1-imgson1">
+		    		<img src="img/w-z-2.png" class="pa1-imgson2">
+		    	</p>
+		    	<img src="img/t-z.png" class="pa-1-img2 ani" swiper-animate-effect="bounceInDown" swiper-animate-duration="3s" swiper-animate-delay="1s">
+		    	<img src="img/d-l.png" class="pa-1-img3 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="3s" swiper-animate-delay="1.5s">
+		    	<img src="img/d-l.png" class="pa-1-img4 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="3s" swiper-animate-delay="1.5s">
+		    	<img src="img/wz.png" class="pa-1-img5">
+	    	</div>
+	    	<div class="swiper-slide part-2">
+	    		<img src="img/d-l-2.png" class="pa-2-img1 ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="2s">
+	    		<img src="img/mid.png" class="pa-2-img2 ani" wiper-animate-effect="zoomInLeft" swiper-animate-duration="2s" swiper-animate-delay="0.5s">
+	    		<img src="img/bg-3.png" class="pa-2-img3">
+	    		<img src="img/bg-2.png" class="pa-2-img4">		
+	   		</div>
+	    	<div class="swiper-slide part-3">
+	    		<img src="img/bg-2.png" class="pa-3-img5">
+	    		<img src="img/y-3.png" class="pa-3-img1">
+	    		<img src="img/y-h.png" class="pa-3-img2 ani" swiper-animate-effect="flash" swiper-animate-duration="2s" swiper-animate-delay="0.5s">
+	    		<img src="img/y-h.png" class="pa-3-img3 ani" swiper-animate-effect="flash" swiper-animate-duration="2s" swiper-animate-delay="0.5s">
+	    		<img src="img/t-c-1.png" class="pa-3-img4 ani" swiper-animate-effect="slideInLeft" swiper-animate-duration="2s">
+	    		<img src="img/w-z-4.png" class="pa-3-img6">
+	    	</div>
+	    	<div class="swiper-slide part-4">
+	    		<img src="img/p-1.png" class="pa-4-img1 ani" swiper-animate-effect="rollIn" swiper-animate-duration="3s" swiper-animate-delay="0.3s">
+	    		<img src="img/p-2.png" class="pa-4-img3 ani" swiper-animate-effect="zoomIn" swiper-animate-duration="3s" swiper-animate-delay="0.3s">
+	    		<img src="img/bg-6.jpg" class="pa-4-img2">
+	    		<img src="img/p-3.png" class="pa-4-img4">
+	    		<img src="img/p-3.png" class="pa-4-img5">
+	    		<img src="img/p-4.png" class="pa-4-img6">
+	    	</div>
+	    	<div class="swiper-slide part-5">
+	    		<img src="img/bg.png" class="pa-5-img1">
+	    		<img src="img/y-3.png" class="pa-5-img2">
+	    		<img src="img/t-z.png" class="pa-5-img3 ani" swiper-animate-effect="bounceInDown" swiper-animate-duration="2s" swiper-animate-delay="0.2s">
+	    		<img src="img/c-e.png" class="pa-5-img4 ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="5s ">
+	    		<img src="img/d-l.png" class="pa-5-img5 ani" swiper-animate-effect="bounceInUp" swiper-animate-duration="3.5s" swiper-animate-delay="0.2s"">
+	    		<img src="img/d-l.png" class="pa-5-img6 ani" swiper-animate-effect="bounceInUp" swiper-animate-duration="6s" swiper-animate-delay="0.1s"">
+	    		<img src="img/m-q.png" class="pa-5-img7">
+	    		<img src="img/d-l.png" class="pa-5-img8 ani" swiper-animate-effect="bounceInUp" swiper-animate-duration="6s" swiper-animate-delay="0.1s"">
+	    		<img src="img/p-7.png" class="pa-5-img9">
+	    	</div>
+	 	 	</div>
+	  	<div class="swiper-pagination"></div>
+	  	<p>wyc</p>
+	</div>
+</body>
+</html>
+<script> 
+	var mySwiper = new Swiper('.swiper-container', {
+		direction : 'vertical',
+		mousewheelControl : true,
+		speed:1000,
+		pagination : '.swiper-pagination',
+		onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+		    swiperAnimateCache(swiper); //隐藏动画元素 
+		    swiperAnimate(swiper); //初始化完成开始动画
+		}, 
+		onSlideChangeEnd: function(swiper){ 
+		    swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+		} 
+	})
+</script>
